@@ -26,12 +26,12 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jTextField7" max="32767" attributes="0"/>
-                              <Component id="jTextField8" max="32767" attributes="0"/>
-                              <Component id="jTextField9" max="32767" attributes="0"/>
-                              <Component id="jTextField10" max="32767" attributes="0"/>
-                              <Component id="jTextField11" max="32767" attributes="0"/>
-                              <Component id="jTextField12" pref="211" max="32767" attributes="0"/>
+                              <Component id="tf_name" max="32767" attributes="0"/>
+                              <Component id="tf_id" max="32767" attributes="0"/>
+                              <Component id="tf_lugar" max="32767" attributes="0"/>
+                              <Component id="tf_edad2" max="32767" attributes="0"/>
+                              <Component id="tf_estatura" max="32767" attributes="0"/>
+                              <Component id="tf_profesion" pref="211" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -53,7 +53,7 @@
                       <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
-                          <Component id="jTextField7" pref="27" max="32767" attributes="0"/>
+                          <Component id="tf_name" pref="27" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -61,7 +61,7 @@
                       <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
-                          <Component id="jTextField8" pref="27" max="32767" attributes="0"/>
+                          <Component id="tf_id" pref="27" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -69,7 +69,7 @@
                       <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
-                          <Component id="jTextField9" pref="27" max="32767" attributes="0"/>
+                          <Component id="tf_lugar" pref="27" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -77,7 +77,7 @@
                       <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
-                          <Component id="jTextField10" pref="27" max="32767" attributes="0"/>
+                          <Component id="tf_edad2" pref="27" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -85,13 +85,13 @@
                       <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
-                          <Component id="jTextField11" pref="23" max="32767" attributes="0"/>
+                          <Component id="tf_estatura" pref="23" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField12" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="tf_profesion" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
                   <Component id="jb_crear2" min="-2" pref="47" max="-2" attributes="0"/>
@@ -157,22 +157,25 @@
             <Property name="text" type="java.lang.String" value="Profesi&#xf3;n"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField7">
+        <Component class="javax.swing.JTextField" name="tf_name">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField8">
+        <Component class="javax.swing.JTextField" name="tf_id">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField9">
+        <Component class="javax.swing.JTextField" name="tf_lugar">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField10">
+        <Component class="javax.swing.JTextField" name="tf_edad2">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField11">
+        <Component class="javax.swing.JTextField" name="tf_estatura">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField12">
+        <Component class="javax.swing.JTextField" name="tf_profesion">
         </Component>
         <Component class="javax.swing.JButton" name="jb_crear2">
           <Properties>
             <Property name="text" type="java.lang.String" value="Crear"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_crear2MouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -249,7 +252,7 @@
     </Container>
   </NonVisualComponents>
   <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -285,20 +288,25 @@
                           <Component id="jLabel3" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                          <Component id="jb_crear" alignment="1" min="-2" pref="114" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jTextField5" min="-2" pref="213" max="-2" attributes="0"/>
-                          <Component id="jTextField6" min="-2" pref="213" max="-2" attributes="0"/>
-                          <Component id="jTextField4" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
-                          <Component id="jTextField3" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
-                          <Component id="jTextField2" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
-                          <Component id="jTextField1" min="-2" pref="213" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="tf_zona" min="-2" pref="213" max="-2" attributes="0"/>
+                                  <Component id="tf_fundacion" min="-2" pref="213" max="-2" attributes="0"/>
+                                  <Component id="tf_habitantes" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                                  <Component id="tf_extension" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                                  <Component id="tf_clima" alignment="0" min="-2" pref="213" max="-2" attributes="0"/>
+                                  <Component id="tf_nombre" min="-2" pref="213" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                              <Component id="jb_registrarpersona" min="-2" pref="139" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="213" max="-2" attributes="0"/>
-                      <Component id="jb_crear" min="-2" pref="114" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="99" max="32767" attributes="0"/>
@@ -312,7 +320,7 @@
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jTextField1" alignment="3" pref="25" max="32767" attributes="0"/>
+                  <Component id="tf_nombre" alignment="3" pref="25" max="32767" attributes="0"/>
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -321,22 +329,22 @@
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField5" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                          <Component id="tf_zona" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField2" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                          <Component id="tf_clima" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField3" alignment="3" pref="26" max="32767" attributes="0"/>
+                          <Component id="tf_extension" alignment="3" pref="26" max="32767" attributes="0"/>
                           <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField4" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                          <Component id="tf_habitantes" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
@@ -345,11 +353,14 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField6" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                  <Component id="tf_fundacion" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-              <Component id="jb_crear" min="-2" pref="47" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jb_crear" pref="47" max="32767" attributes="0"/>
+                  <Component id="jb_registrarpersona" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -411,15 +422,15 @@
         <Property name="text" type="java.lang.String" value="A&#xf1;o de Fundaci&#xf3;n"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="tf_nombre">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
+    <Component class="javax.swing.JTextField" name="tf_clima">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField3">
+    <Component class="javax.swing.JTextField" name="tf_extension">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField4">
+    <Component class="javax.swing.JTextField" name="tf_habitantes">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField6">
+    <Component class="javax.swing.JTextField" name="tf_fundacion">
     </Component>
     <Component class="javax.swing.JButton" name="jb_crear">
       <Properties>
@@ -429,7 +440,15 @@
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_crearMouseClicked"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField5">
+    <Component class="javax.swing.JTextField" name="tf_zona">
+    </Component>
+    <Component class="javax.swing.JButton" name="jb_registrarpersona">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Registrar Persona"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_registrarpersonaMouseClicked"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

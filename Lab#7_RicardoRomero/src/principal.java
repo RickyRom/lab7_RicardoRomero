@@ -1,9 +1,13 @@
+
+import java.util.ArrayList;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author ricky
@@ -15,7 +19,8 @@ public class principal extends javax.swing.JFrame {
      */
     public principal() {
         initComponents();
-        ah = new adminHilo(this.registro);
+        ah = new adminHilo(new JFrame());
+        Personas p = new Personas();
     }
 
     /**
@@ -35,12 +40,12 @@ public class principal extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
+        tf_name = new javax.swing.JTextField();
+        tf_id = new javax.swing.JTextField();
+        tf_lugar = new javax.swing.JTextField();
+        tf_edad2 = new javax.swing.JTextField();
+        tf_estatura = new javax.swing.JTextField();
+        tf_profesion = new javax.swing.JTextField();
         jb_crear2 = new javax.swing.JButton();
         registro = new javax.swing.JDialog();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -54,13 +59,14 @@ public class principal extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        tf_nombre = new javax.swing.JTextField();
+        tf_clima = new javax.swing.JTextField();
+        tf_extension = new javax.swing.JTextField();
+        tf_habitantes = new javax.swing.JTextField();
+        tf_fundacion = new javax.swing.JTextField();
         jb_crear = new javax.swing.JButton();
-        jTextField5 = new javax.swing.JTextField();
+        tf_zona = new javax.swing.JTextField();
+        jb_registrarpersona = new javax.swing.JButton();
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel8.setText("Crear Persona");
@@ -84,6 +90,11 @@ public class principal extends javax.swing.JFrame {
         jLabel14.setText("Profesión");
 
         jb_crear2.setText("Crear");
+        jb_crear2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_crear2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout personasLayout = new javax.swing.GroupLayout(personas.getContentPane());
         personas.getContentPane().setLayout(personasLayout);
@@ -106,12 +117,12 @@ public class principal extends javax.swing.JFrame {
                             .addComponent(jLabel9))
                         .addGap(18, 18, 18)
                         .addGroup(personasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField7)
-                            .addComponent(jTextField8)
-                            .addComponent(jTextField9)
-                            .addComponent(jTextField10)
-                            .addComponent(jTextField11)
-                            .addComponent(jTextField12, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)))
+                            .addComponent(tf_name)
+                            .addComponent(tf_id)
+                            .addComponent(tf_lugar)
+                            .addComponent(tf_edad2)
+                            .addComponent(tf_estatura)
+                            .addComponent(tf_profesion, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)))
                     .addGroup(personasLayout.createSequentialGroup()
                         .addGap(198, 198, 198)
                         .addComponent(jb_crear2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -127,35 +138,35 @@ public class principal extends javax.swing.JFrame {
                     .addComponent(jLabel9)
                     .addGroup(personasLayout.createSequentialGroup()
                         .addGap(4, 4, 4)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)))
+                        .addComponent(tf_name, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(personasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10)
                     .addGroup(personasLayout.createSequentialGroup()
                         .addGap(4, 4, 4)
-                        .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)))
+                        .addComponent(tf_id, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(personasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11)
                     .addGroup(personasLayout.createSequentialGroup()
                         .addGap(4, 4, 4)
-                        .addComponent(jTextField9, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)))
+                        .addComponent(tf_lugar, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(personasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel12)
                     .addGroup(personasLayout.createSequentialGroup()
                         .addGap(4, 4, 4)
-                        .addComponent(jTextField10, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)))
+                        .addComponent(tf_edad2, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(personasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel13)
                     .addGroup(personasLayout.createSequentialGroup()
                         .addGap(4, 4, 4)
-                        .addComponent(jTextField11, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)))
+                        .addComponent(tf_estatura, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(personasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_profesion, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(103, 103, 103)
                 .addComponent(jb_crear2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(73, 73, 73))
@@ -206,7 +217,7 @@ public class principal extends javax.swing.JFrame {
                 .addGap(58, 58, 58))
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel1.setText("Crear Lugar");
@@ -236,6 +247,13 @@ public class principal extends javax.swing.JFrame {
             }
         });
 
+        jb_registrarpersona.setText("Registrar Persona");
+        jb_registrarpersona.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_registrarpersonaMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -253,18 +271,21 @@ public class principal extends javax.swing.JFrame {
                             .addComponent(jLabel4)
                             .addComponent(jLabel3)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel7))
-                        .addGap(18, 18, 18)
+                            .addComponent(jLabel7)
+                            .addComponent(jb_crear, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(213, 213, 213)
-                        .addComponent(jb_crear, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tf_zona, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tf_fundacion, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tf_habitantes, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tf_extension, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tf_clima, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(78, 78, 78)
+                                .addComponent(jb_registrarpersona, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(99, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -274,7 +295,7 @@ public class principal extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
+                    .addComponent(tf_nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -282,27 +303,29 @@ public class principal extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(tf_zona, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_clima, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))
                         .addGap(16, 16, 16)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                            .addComponent(tf_extension, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
                             .addComponent(jLabel4))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_habitantes, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5))
                         .addGap(49, 49, 49)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(78, 78, 78)
-                .addComponent(jb_crear, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53))
+                    .addComponent(tf_fundacion, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(82, 82, 82)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jb_crear, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+                    .addComponent(jb_registrarpersona, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(49, 49, 49))
         );
 
         pack();
@@ -310,7 +333,64 @@ public class principal extends javax.swing.JFrame {
 
     private void jb_crearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearMouseClicked
         ah.run();
+        String nombre;
+        String clima;
+        String extensionT;
+        String habitantes;
+        String tipo_zona;
+        String año_fundacion;
+
+        nombre = tf_nombre.getText();
+        clima = tf_clima.getText();
+        extensionT = tf_extension.getText();
+        habitantes = tf_habitantes.getText();
+        tipo_zona = tf_zona.getText();
+        año_fundacion = tf_fundacion.getText();
+        JOptionPane.showMessageDialog(this, "lugar creado");
+
+        tf_nombre.setText("");
+        tf_clima.setText("");
+        tf_extension.setText("");
+        tf_habitantes.setText("");
+        tf_zona.setText("");
+        tf_fundacion.setText("");
     }//GEN-LAST:event_jb_crearMouseClicked
+
+    private void jb_registrarpersonaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_registrarpersonaMouseClicked
+        personas.setModal(true);
+        personas.pack();
+        personas.setLocationRelativeTo(this);
+        personas.setVisible(true);
+    }//GEN-LAST:event_jb_registrarpersonaMouseClicked
+
+    private void jb_crear2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crear2MouseClicked
+        String nombre;
+        String id;
+        String lugar;
+        int edad;
+        int estatura;
+        String profesion;
+        
+        nombre = tf_name.getText();
+        id = tf_id.getText();
+        lugar = tf_lugar.getText();
+        edad = Integer.parseInt(tf_edad2.getText());
+        estatura = Integer.parseInt(tf_estatura.getText());
+        profesion = tf_profesion.getText();
+        
+        Personas r = new Personas(nombre,id,lugar,edad,estatura,profesion);
+        lista.add(r);
+        
+        JOptionPane.showMessageDialog(this, "Persona creada");
+        
+        tf_name.setText("");
+        tf_id.setText("");
+        tf_lugar.setText("");
+        tf_edad2.setText("");
+        tf_estatura.setText("");
+        tf_profesion.setText("");
+        
+    }//GEN-LAST:event_jb_crear2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -326,16 +406,24 @@ public class principal extends javax.swing.JFrame {
                 if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(principal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(principal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(principal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(principal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -366,22 +454,24 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JButton jb_crear;
     private javax.swing.JButton jb_crear2;
+    private javax.swing.JButton jb_registrarpersona;
     private javax.swing.JDialog personas;
     private javax.swing.JDialog registro;
+    private javax.swing.JTextField tf_clima;
+    private javax.swing.JTextField tf_edad2;
+    private javax.swing.JTextField tf_estatura;
+    private javax.swing.JTextField tf_extension;
+    private javax.swing.JTextField tf_fundacion;
+    private javax.swing.JTextField tf_habitantes;
+    private javax.swing.JTextField tf_id;
+    private javax.swing.JTextField tf_lugar;
+    private javax.swing.JTextField tf_name;
+    private javax.swing.JTextField tf_nombre;
+    private javax.swing.JTextField tf_profesion;
+    private javax.swing.JTextField tf_zona;
     // End of variables declaration//GEN-END:variables
 adminHilo ah;
+ArrayList<Personas> lista = new ArrayList();
 }
