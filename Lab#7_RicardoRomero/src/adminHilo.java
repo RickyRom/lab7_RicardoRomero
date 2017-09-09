@@ -1,4 +1,5 @@
 
+import java.util.ArrayList;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
@@ -15,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
 public class adminHilo implements Runnable {
 
     protected JFrame f;
-    
+    ArrayList<Personas> lista = new ArrayList();
 
     public adminHilo(JFrame f) {
         this.f = f;
@@ -46,10 +47,6 @@ public class adminHilo implements Runnable {
             }
         ));
             DefaultTableModel modelo = (DefaultTableModel) nuevo.jTable1.getModel();
-            for (int i = 0; i < 10; i++) {
-                
-            }
         }
     }
-
 }

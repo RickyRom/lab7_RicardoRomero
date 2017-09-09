@@ -332,7 +332,6 @@ public class principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jb_crearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearMouseClicked
-        ah.run();
         String nombre;
         String clima;
         String extensionT;
@@ -346,7 +345,12 @@ public class principal extends javax.swing.JFrame {
         habitantes = tf_habitantes.getText();
         tipo_zona = tf_zona.getText();
         año_fundacion = tf_fundacion.getText();
+        
+        lugar = new Lugares(nombre, clima, extensionT, habitantes, tipo_zona, año_fundacion, lista);
+        
         JOptionPane.showMessageDialog(this, "lugar creado");
+        
+        lugar.start();
 
         tf_nombre.setText("");
         tf_clima.setText("");
@@ -474,4 +478,5 @@ public class principal extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 adminHilo ah;
 ArrayList<Personas> lista = new ArrayList();
+Lugares lugar;
 }
